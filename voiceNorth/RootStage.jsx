@@ -17,7 +17,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LogLevel, OneSignal } from 'react-native-onesignal';
 import AppleAdsAttribution from '@vladikstyle/react-native-apple-ads-attribution';
 import DeviceInfo from 'react-native-device-info';
-import { buildExtInfo } from '../services/buildExtInfo';
+import { buildExtInfo } from '../voiceNorth/services/buildExtInfo';
 import {
   getTrackingStatus,
   requestTrackingPermission,
