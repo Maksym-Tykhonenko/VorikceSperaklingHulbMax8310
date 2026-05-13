@@ -7,22 +7,24 @@ import { useCrossFade } from '../motionLayer/useCrossFade';
 
 type Props = {
   onDone: () => void;
+  navigation: any;
 };
 
-export default function WelcomeDriftFlow({ onDone }: Props) {
+export default function WelcomeDriftFlow({ navigation }: Props) {
   const [index, setIndex] = useState(0);
   const fade = useCrossFade(index, 380);
 
   const handleFinish = useCallback(async () => {
     await markWelcomeFinished();
-    onDone();
-  }, [onDone]);
+    
+  }, []);
 
   const next = () => {
     if (index < driftSequence.length - 1) {
       setIndex(index + 1);
     } else {
       handleFinish();
+      navigation.navigate('HubShell');
     }
   };
 

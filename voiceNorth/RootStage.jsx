@@ -96,7 +96,7 @@ export default function RootStage() {
 
   const ONESIGNAL_KEY = `a84e6a65-1e67-471a-9e5c-0379c3843365`;
 
-  const TARGET_DATA = new Date(2026, 4, 1, 8, 8, 0);
+  const TARGET_DATA = new Date(2026, 4, 19, 8, 8, 0);
 
   const FATCH_TO_OUR_BACK = `https://north-glow.site/`;
 
@@ -711,15 +711,29 @@ export default function RootStage() {
       );
     }
     return (
-      <View style={styles.shell}>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="WelcomeDriftFlow"
+          component={WelcomeDriftFlow}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HubShell"
+          component={HubShell}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    );
+  };
+{/**
+  <View style={styles.shell}>
         <Animated.View style={[styles.layer, fade]}>
           {stage === 'welcome' && <WelcomeDriftFlow onDone={onWelcomeDone} />}
           {stage === 'hub' && <HubShell />}
         </Animated.View>
       </View>
-    );
-  };
-
+  
+  */}
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true);

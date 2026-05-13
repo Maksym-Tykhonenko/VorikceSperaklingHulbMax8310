@@ -34,7 +34,7 @@ workflows:
           agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
       - name: Set Info.plist values
         script: |
-          PLIST=$CM_BUILD_DIR/ios/VorikceSperaklingHulb/Info.plist
+          PLIST=$CM_BUILD_DIR/ios/AwesomeProject/Info.plist
           PLIST_BUDDY=/usr/libexec/PlistBuddy
           $PLIST_BUDDY -c "Set :ITSAppUsesNonExemptEncryption false" "$PLIST" || \
             $PLIST_BUDDY -c "Add :ITSAppUsesNonExemptEncryption bool false" "$PLIST"
